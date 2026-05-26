@@ -1,8 +1,8 @@
-# liveshot.app
+# liveshotapp.com
 
 Static website for LiveShot — landing page + privacy + terms + support.
 Vanilla HTML/CSS, no build step. Served via GitHub Pages on the custom
-domain `liveshot.app`.
+domain `liveshotapp.com`.
 
 ## Structure
 
@@ -13,7 +13,7 @@ domain `liveshot.app`.
 ├── terms/index.html        terms of use   (App Store URL)
 ├── support/index.html      FAQ + support email (App Store URL)
 ├── 404.html                missing-page fallback
-├── CNAME                   GitHub Pages custom domain → liveshot.app
+├── CNAME                   GitHub Pages custom domain → liveshotapp.com
 ├── robots.txt              crawler config
 ├── sitemap.xml             URL list for search engines
 └── assets/style.css        shared styles
@@ -21,10 +21,10 @@ domain `liveshot.app`.
 
 The four URLs Apple's App Review will click are:
 
-- `https://liveshot.app/`
-- `https://liveshot.app/privacy/`
-- `https://liveshot.app/terms/`
-- `https://liveshot.app/support/`
+- `https://liveshotapp.com/`
+- `https://liveshotapp.com/privacy/`
+- `https://liveshotapp.com/terms/`
+- `https://liveshotapp.com/support/`
 
 All must return 200 before submission or the listing will be rejected.
 
@@ -48,7 +48,7 @@ In the new repo's settings:
 **Settings → Pages → Build and deployment**
 - Source: **Deploy from a branch**
 - Branch: **main** / **/ (root)**
-- Custom domain: **liveshot.app**
+- Custom domain: **liveshotapp.com**
 - Tick **Enforce HTTPS** (it'll be available a few minutes after the cert provisions)
 
 The `CNAME` file in the repo already tells GitHub the custom domain.
@@ -75,7 +75,7 @@ www CNAME ferguimara.github.io.
 DNS propagation usually takes 15-30 min. You can check with:
 
 ```bash
-dig liveshot.app +short
+dig liveshotapp.com +short
 # should return the four GitHub IPs above
 ```
 
@@ -86,8 +86,8 @@ DNS is live), all four URLs should return 200:
 
 ```bash
 for path in / /privacy/ /terms/ /support/; do
-  echo -n "https://liveshot.app$path → "
-  curl -sI "https://liveshot.app$path" | head -1
+  echo -n "https://liveshotapp.com$path → "
+  curl -sI "https://liveshotapp.com$path" | head -1
 done
 ```
 
