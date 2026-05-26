@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://liveshot.app/sitemap.xml
+Sitemap: https://liveshotapp.com/sitemap.xml
