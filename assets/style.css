@@ -1,0 +1,428 @@
+/* LiveShot — liveshot.app
+ * Vanilla CSS, no build step. Brand mirrors the iOS app:
+ *   - #CAFF00 lime as primary accent
+ *   - #9FCC00 deep lime for text on light backgrounds (WCAG AA on white)
+ *   - Heavy black weights, tracking-tight
+ *   - Mobile-first
+ */
+
+:root {
+  --lime: #CAFF00;
+  --lime-deep: #9FCC00;
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface-2: #1f1f1f;
+  --text: #f5f5f5;
+  --text-muted: #a1a1a1;
+  --border: rgba(255, 255, 255, 0.08);
+  --content-max: 720px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f5f7;
+    --surface-2: #ebebed;
+    --text: #1d1d1f;
+    --text-muted: #6e6e73;
+    --border: rgba(0, 0, 0, 0.08);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--lime-deep);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+a:hover { border-bottom-color: var(--lime-deep); }
+
+/* ------- Site chrome (header + footer) ------- */
+
+.site-header {
+  padding: 28px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.site-header a {
+  border: none;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.brand .dot {
+  color: var(--lime-deep);
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav a {
+  color: var(--text-muted);
+}
+
+.site-footer {
+  margin-top: 80px;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.site-footer .footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+}
+
+/* ------- Landing page ------- */
+
+.hero {
+  text-align: center;
+  padding: 60px 24px 80px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lime-deep);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 8vw, 72px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0 0 24px;
+}
+
+.hero h1 .accent {
+  color: var(--lime-deep);
+}
+
+.hero .tagline {
+  font-size: clamp(18px, 3.5vw, 22px);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.hero .cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--lime);
+  color: #000;
+}
+.btn-primary:hover {
+  background: var(--lime-deep);
+  color: #000;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  color: var(--lime-deep);
+}
+
+/* Feature grid */
+
+.features {
+  max-width: var(--content-max);
+  margin: 60px auto 0;
+  padding: 0 24px;
+}
+
+.features h2 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.feature-card .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--lime);
+  color: #000;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ------- Document pages (privacy / terms / support) ------- */
+
+.doc {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+.doc h1 {
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 24px 0 16px;
+}
+
+.doc h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 48px 0 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.doc h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.doc h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 28px 0 8px;
+}
+
+.doc p {
+  margin: 0 0 16px;
+}
+
+.doc ul, .doc ol {
+  padding-left: 24px;
+  margin: 0 0 16px;
+}
+
+.doc li {
+  margin-bottom: 6px;
+}
+
+.doc .meta {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 16px 0 24px;
+}
+
+.doc table th,
+.doc table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.doc table th {
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.doc strong { font-weight: 700; }
+
+.doc code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ------- Support page ------- */
+
+.faq {
+  margin-top: 32px;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.faq details:first-of-type { border-top: 1px solid var(--border); }
+
+.faq summary {
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--lime-deep);
+  transition: transform 0.2s ease;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq details p {
+  margin: 12px 0 0;
+  color: var(--text-muted);
+}
+
+.contact-card {
+  margin-top: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+}
+
+.contact-card h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.contact-card .email {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 18px;
+  color: var(--lime-deep);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* ------- 404 ------- */
+
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.error-page h1 {
+  font-size: 96px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin: 0;
+  color: var(--lime-deep);
+}
+
+.error-page p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin: 16px 0 32px;
+}

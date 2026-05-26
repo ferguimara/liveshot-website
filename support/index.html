@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Support — LiveShot</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Get help with LiveShot — FAQs, account management, and contact support@liveshot.app.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%BE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="brand">Live<span class="dot">Shot</span></a>
+    <nav class="nav">
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <h1>Support</h1>
+    <p class="meta">Questions or feedback? We respond within 7 days.</p>
+
+    <p>
+      Most things you'll want to do live inside the app — <strong>My LiveShot</strong> tab has account, subscription, and notification controls. The questions below cover the things people email us about most often.
+    </p>
+
+    <div class="faq">
+      <details>
+        <summary>I'm not getting push notifications for my followed players.</summary>
+        <p>
+          1) Check iOS Settings → Notifications → LiveShot — make sure Allow Notifications is on.<br>
+          2) In LiveShot, open Players → tap any player → make sure they're followed and the notification toggles you want are on.<br>
+          3) Each player has its own toggles for "Match start", "Set result", and "Match result" — by default we don't send all of these.<br>
+          If push still doesn't arrive after a match starts, email us.
+        </p>
+      </details>
+
+      <details>
+        <summary>The Live Activity didn't auto-start on my lock screen.</summary>
+        <p>
+          Live Activities only fire for players you've followed AND whose match has transitioned to a live state. They start within ~30s of the match going live. If you've followed Alcaraz and his match has been live for 10 minutes without a Live Activity appearing, force-quit and reopen LiveShot once, then email us if it still doesn't show.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I cancel my LiveShot Pro subscription?</summary>
+        <p>
+          Open iOS Settings → tap your name at the top → Subscriptions → LiveShot Pro → Cancel Subscription. Cancellation takes effect at the end of the current paid period — we don't pro-rate. Deleting the app does NOT cancel your subscription, you have to cancel via Settings.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I restore a purchase on a new device?</summary>
+        <p>
+          Sign in with the same Apple ID you originally purchased with, open LiveShot, go to My LiveShot tab, tap the Pro card, and tap "Restore Purchases" on the paywall. Apple will recognize your existing entitlement and unlock immediately.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I delete my account?</summary>
+        <p>
+          In LiveShot: My LiveShot → Settings → Delete account. This hard-deletes your account row on our server, breaks the Sign-in-with-Apple relationship on Apple's side, and cascade-deletes your follows + notification preferences + APNs device token. The action is irreversible. You can re-sign-in afterward with the same Apple ID, but you'll start fresh.
+        </p>
+      </details>
+
+      <details>
+        <summary>Spoiler Mode is on but I can still see the score on the Live tab.</summary>
+        <p>
+          Live tab cells show a "Tap to reveal" overlay when Spoiler Mode is on. If you've tapped a match's reveal once, it stays revealed for the rest of that session — force-quit the app to reset all reveals. Match Detail pages still show the scoreboard normally, only the cell overlay is masked.
+        </p>
+      </details>
+
+      <details>
+        <summary>The "What's at Stake" / "Behind this Match" cards are stuck loading.</summary>
+        <p>
+          The AI briefings are generated server-side once per match and cached. On a brand-new match it can take a minute or two for the first generation. If the cards have been spinning for more than 5 minutes on a match that's been live for a while, please email us with the player names and the tournament.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I reorder the widgets on the Match Detail page?</summary>
+        <p>
+          Yes — long-press any widget (scoreboard, head-to-head, "What's at Stake", "Behind this Match", match stats, point-by-point) on the gamecast. The widgets start jiggling. Press-and-hold a widget for a moment and drag it up or down to reorder. Tap Done at the top when finished. Your order is saved and follows you across devices.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you have an Android version?</summary>
+        <p>
+          Not yet. Android beta is planned for after Wimbledon 2026. If you want to be notified when it's available, email us with the subject "Android waitlist".
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you have an Apple Watch app?</summary>
+        <p>
+          Coming in a future update. The current build focuses on the iPhone experience + Live Activities on the lock screen, which surface live scores without needing a Watch app.
+        </p>
+      </details>
+
+      <details>
+        <summary>I have a bug to report or a feature request.</summary>
+        <p>
+          Email <a href="mailto:support@liveshot.app">support@liveshot.app</a> with as much detail as you can — what device you're using, what iOS version, and what you were doing when it happened. If it's a visual bug, a screenshot helps a lot.
+        </p>
+      </details>
+    </div>
+
+    <div class="contact-card">
+      <h2>Still stuck? Email us.</h2>
+      <p>We read every email and reply within 7 days. Usually faster.</p>
+      <p class="email"><a href="mailto:support@liveshot.app">support@liveshot.app</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+      <a href="mailto:support@liveshot.app">support@liveshot.app</a>
+    </div>
+    <div>© 2026 Fernando Guimaraes. Built for tennis fans.</div>
+  </footer>
+</body>
+</html>
